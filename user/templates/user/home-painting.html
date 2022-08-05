@@ -1,0 +1,56 @@
+{% load static %}
+{% include './navbar.html' %}
+
+<section id="electricians" class="pt-140-px">
+    <div class="container">
+        <div class="row mt-5 mb-5">
+            <div class="col-md-6 pt-5">
+                <h1 class="pt-4">House Painters</h1>
+                <i class="fa fa-star yellow pr-2" aria-hidden="true"></i> 4.5 (9k)
+            </div>
+            <div class="col-md-6">
+                <img src={% static "./images/homepainter.jpg" %} class="h-300px p-2">
+            </div>
+        </div>
+    </div>
+</section>
+<section id="booking">
+    <div class="container">
+        <div class="row mt-4 mb-5">
+            <div class="col-md-6">
+                <div class="row border-bottom pb-3">
+                    <h2>Home Painting</h2>
+                    <div class="col-md-9 border-bottom-d pb-3">
+                        
+                        <h5 class="mt-4">Consultaion & Painting Service</h5>
+                        <i class="fa fa-star yellow pr-2" aria-hidden="true"></i> 4.5 (2k)
+                        <div class="pt-2">
+                            <i class="fa fa-inr pr-1 text-13px text-black" aria-hidden="true" ></i><b class="pr-3">0</b>   
+                            {% comment %} <i class="fa fa-circle pr-2 pl-3 text-5px mb-2" aria-hidden="true"></i>{% endcomment %}   &#9679;   40 mins 
+                        </div>
+                    </div>
+                    <div class="col-md-3 booking-img">
+                        <img src={% static "./images/homepainting.jpg" %}>
+                        <form method="get" action="{% url 'bookele' %}">
+                            <button type="submit" class="btn btn-white booking-button pl-3 pr-3 pt-1 pb-1 shadow-sm">Book</button>
+                        </form>
+                        {% comment %} <input name="add" type="submit" value="Book" class="btn btn-white booking-button pl-3 pr-3 pt-1 pb-1 shadow-sm"> {% endcomment %}
+                    </div>
+                    <div class="pl-4 mt-3 text-success">&#9679; Min ORDER VALUE ₹8500</div>
+
+                    <div class="pl-4">&#9679; Consultaion followed by quick & cost-effective painting service</div>
+                    <div class="pl-4">&#9679; best for painting your rental property during move-in / move-out</div>
+
+                </div> 
+                
+            </div>
+
+
+            <div class="col-md-6">
+                {% comment %} {% include './bookele.html' %} {% endcomment %}
+            </div>
+        </div>
+    </div>
+</section>
+
+{% include './footer.html' %}

@@ -1,0 +1,792 @@
+body{
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Roboto', sans-serif;
+    width: 100%;
+}
+
+.pt-140-px{
+    padding-top: 120px;
+}
+
+ 
+
+.h-300px{
+    height: 300px;
+}
+
+h1, h2, h3, h4, h5{
+    font-family: 'Secular One', sans-serif;
+    font-weight: 700;
+} 
+
+.border-bottom{
+    border-bottom: 1px solid #ced4da;
+}
+
+.border-bottom-d{
+    border-bottom: 1px dotted #ced4da;
+}
+
+
+body::-webkit-scrollbar, .box-content::-webkit-scrollbar{
+    width: 11px;
+}
+
+body, .box-content{
+scrollbar-width: thin;
+scrollbar-color: #90A4AE #CFD8DC;
+}
+
+body::-webkit-scrollbar-track{
+background: #CFD8DC;
+}
+
+body::-webkit-scrollbar-thumb, .box-content::-webkit-scrollbar-thumb{ 
+background-color: #90A4AE;
+border-radius: 6px;
+border: 3px solid #CFD8DC;
+}
+
+.background-silvar{
+    background-color: #f2f2f26b;
+}
+
+.shadow-mediam{
+    box-shadow: 0px 0px 20px rgba(152, 157, 168, 0.15);
+}
+
+.color-black{
+    color: black;
+}
+
+#navbar{
+    background-color: #0164ff;
+    position: fixed;
+    z-index: 10000;
+    width: 100%;
+    top: 0;
+    left: 0;
+}
+
+
+.text-white{
+    color: white;
+}
+
+.text-silvar{
+    color: #58666e;
+}
+
+.height-125px{
+    height: 125px;
+}
+
+.h-100-px{
+    height: 100px !important;
+}
+
+.navbar-collapse {
+    font-size: 20px !important;
+    font-variant-caps: normal !important;
+    font-weight: 500 !important;
+    float: right;
+}
+
+#navbar .navbar .collapse li a:hover{
+    color: white !important;
+    transition: 0.9s;
+}
+
+#navbar .btn-h  a:hover{
+    color: white !important;
+    transition: 0.9s;
+}
+
+
+
+
+/* Style The Dropdown Button */
+.dropbtn {
+  background-color: #0164ff;
+  color: white;
+  font-size: 23px;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+
+.dropdown button:focus {
+    outline: none !important;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 130px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 8px 12px;
+  text-decoration: none !important;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #0164ff}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: #0164ff;
+}
+
+
+
+
+
+
+
+
+
+
+/* home page */
+
+.h-img{
+    height: 350px;
+    /* width: 350px; */
+}
+
+/* services */
+
+#our-services {
+    background-color: #f2f2f26b;
+}
+
+#our-services .s-item i{
+    font-size: 35px;
+}
+
+#our-services .s-item{
+    text-align: -webkit-center;
+}
+
+#our-services  .s-item i{
+    color: #bcc5cf;
+    transition:0.8s;
+    text-decoration: none !important;
+}
+
+#our-services .s-item-icon{
+    height: 75px;
+    width: 72px;
+    border-radius: 15px;
+    border: 1px solid #eee;
+}
+
+.pt-5px{
+    padding-top: 5px;
+}
+
+#our-services .s-item-icon img{
+    height: 52px;
+}
+
+
+#our-services .services-item-name{
+    color: #58666e;
+}
+
+#our-services .services-item-main a{
+    text-decoration: none;
+}
+
+/* login */
+
+#login .form-control{
+    height: 50px !important;
+}
+
+#login .mobile-wrapper{
+    border-radius: 5px;
+}
+
+
+.f-g-login-button{
+    height: 30px;
+    width: 33px;
+}
+
+.g-login-btn{
+    height: 45px;
+    font-weight: 700;
+    border-bottom: 1px solid #ced4da;
+    padding: 8px !important;
+    border-radius: 2px;
+
+}
+
+.g-login-btn a{
+    color: #6c757d;
+    text-decoration: none;
+}
+
+.f-login-btn{
+    background-color: rgb(24 119 242);
+    height: 45px;
+    font-weight: 700;
+    border-bottom: 1px solid #ced4da;
+    padding-top: 8px !important;
+    padding-bottom: 8px !important;
+    border-radius: 2px;
+}
+
+.f-login-btn a{
+    text-decoration: none;
+}
+
+#login .form-control:focus{
+    box-shadow: none;
+    border: 1px solid #ccc;
+}
+
+.f-login-btn{
+    margin-bottom: 10px;
+}
+
+/* register type button */
+
+#login .reciver-button{
+    justify-content: center;
+    position: relative;
+}
+
+#login .reciver-button .button-reciver{
+    background-color: #0164ff;
+    width: 130px;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;  
+}
+
+/* #login .reciver-button .button-reciver:hover{
+    background-color: #fcd300; 
+} */
+
+#login .reciver-button .button-you{
+    background-color: #fcd300;
+    width: 130px;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+
+#login .reciver-button .button-or{
+    border-radius: 50%;
+    height: 30px;
+    position: absolute;
+    background-color: white;
+    color: black;
+    margin-top: 5px;
+}
+
+/* home services */
+
+#home-serrvices .box-wrapper .icon img{
+    /* height: 190px;
+    width: 250px;  */
+    height: 180px;
+    width: 222px; 
+    border-radius: 3px;
+}
+
+#home-serrvices .h-item a:hover{
+    text-decoration: none;
+    color: #007bff !important;
+}
+
+#home-serrvices .box-wrapper .box{
+    transition: 0.4s;
+    border-radius: 10px;
+}
+
+#home-serrvices .box-wrapper .box:hover{
+    box-shadow: 0px 0px 30px rgb(73 78 92 / 15%) !important;
+    -webkit-transform: translateY(-10px) !important;
+    -moz-transform: translateY(-10px) !important;
+    transform: translateY(-10px) !important;
+    background-color: #f6f8f8 !important;
+}
+
+a:hover{
+    color: black !important;
+}
+
+/* testimonial */
+
+.border15px{
+    border-radius: 15px;
+}
+
+#carouselExampleInterval{
+    background-color: #0164ff;
+    height: 350px;
+}
+
+.carousel-inner .tour-item img.tm-people {
+    width: 60px;
+    height: 60px;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    -o-object-fit: cover;
+    object-fit: cover;
+    max-width: none
+}
+
+.home-testimonial {
+    background-color: #0164ff;
+    height: 380px;
+}
+
+.home-testimonial-bottom {
+    background-color: #f8f8f8;
+    transition: background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;
+    margin-top: 20px;
+    margin-bottom: 0px;
+    position: relative;
+    height: 130px;
+    top: 190px
+}
+
+.home-testimonial h3 {
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+    text-transform: uppercase
+}
+
+.home-testimonial h2 {
+    color: white;
+    font-size: 28px;
+    font-weight: 700
+}
+
+.testimonial-inner {
+    position: relative;
+    top: -174px
+}
+
+.testimonial-pos {
+    position: relative;
+    top: 24px
+}
+
+.testimonial-inner .tour-desc {
+    border-radius: 5px;
+    padding: 40px
+}
+
+.color-grey-3 {
+    font-family: "Montserrat", Sans-serif;
+    font-size: 14px;
+    color: #6c83a2
+}
+
+.testimonial-inner img.tm-people {
+    width: 60px;
+    height: 60px;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    -o-object-fit: cover;
+    object-fit: cover;
+    max-width: none
+}
+
+.link-name {
+    font-family: "Montserrat", Sans-serif;
+    font-size: 14px;
+    color: #6c83a2
+}
+
+.link-position {
+    font-family: "Montserrat", Sans-serif;
+    font-size: 12px;
+    color: #6c83a2
+}
+
+.form-control:focus{
+    box-shadow: none !important;
+}
+
+/* register type */
+#choose-registration .row {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: blue;
+    font-style: bold;
+}
+
+#choose-registration .register-item a:hover{
+    color: white !important;
+    transition: 0.8s;
+    text-decoration: none;
+}
+
+#choose-registration .register-item{
+    border: 2px solid #0000ff94;
+    border-radius: 20px;
+	transition: 0.6s;
+}
+
+#choose-registration .register-item .btn{
+    border: 2px solid ; 
+    border-radius: 5px;
+	border-color: #2165d4;
+	transition: 0.6s;
+    color: blue;
+    background-color: white;
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+#choose-registration .register-item .btn:hover{
+    background-color: blue;
+    transition: 0.8s;color: white !important;
+}
+
+#choose-registration .register-item .f-icon{
+	font-size: 100px !important;
+	color: blue;
+}
+
+/* why choose */
+
+#why-us .trust-card{
+    /* border: 1px solid #ced4da; */
+    border-radius: 10px;
+    padding: 55px;
+    background-color: #f5f9ff;
+}
+
+#why-us .trust-card img{
+    height: 100px;
+    width: 100px;
+}
+
+#why-us .trust-card h2 {
+    color: black;
+    font-size: 30px !important;
+    font-weight: 700;
+    margin-top: 35px !important;
+}
+
+/* footer */
+
+#footer{
+    background-color: #0164ff;
+}
+
+#footer .social-icon{
+    color: white;
+}
+
+#footer .footer-link{
+    float: left !important;
+    width: 50%;
+    text-align: left !important;
+    color: white !important;
+}
+
+#footer .footer-link a{
+    color: white !important;
+}
+
+#footer .footer-link ul{
+    padding-left: 0px;
+}
+
+#footer .footer-link a:hover{
+    color: #58d3d3 !important;
+    text-decoration: none !important;
+    transition: 1.5s;
+}
+
+#footer .footer-item a:hover{
+    color: white !important;
+    text-decoration: none !important;
+}
+
+#footer .social-icon a:hover{
+    transition: 1.5s;
+}
+
+#footer .footer-link li{
+    padding-left: 0px !important;
+    list-style: none;
+}
+
+#footer-navigation{
+    background-color: black;
+}
+
+/* forget password */
+#forget-password{
+    background-color: #f2f2f26b;
+}
+
+#forget-password .forget-form .btn{
+    border: 2px solid ; 
+    border-radius: 5px;
+	border-color: #2165d4;
+	transition: 0.6s;
+    color: blue;
+    background-color: white;
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+#forget-password .forget-form .btn:hover{
+    background-color: blue;
+    transition: 0.8s;color: white !important;
+}
+
+/* breadcrumb */
+
+#breadcrumb {
+    min-height: 130px !important;
+    padding-top: 140px !important;
+    /* background-color: #3c4040; */
+}
+
+.display-flex-custom{
+    display: inline-flex;
+}
+
+#breadcrumb .breadcrumb li a{
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#breadcrumb .breadcrumb li{
+    padding: 0px 10px 0px 0px;
+}
+
+#breadcrumb .breadcrumb {
+    background-color: white !important;
+    padding: 0px;
+}
+
+#breadcrumb a{
+    color: black !important;
+}
+
+
+#breadcrumb .breadcrumb li {
+    color: black;
+    text-decoration: none;
+}
+
+/* .contect-form */
+#contect-us .contect-form{
+    border: 1px solid silver;
+    border-radius: 10px;
+}
+
+#contect-us .contect-item input{
+    border-bottom: 1px solid blue;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-radius: 0px;
+    float: right;
+    width: 75%;
+    padding-left: 0px !important;
+    margin-left: 25px;
+}
+
+#contect-us .contect-item label{
+    margin-top: 13px;
+    width: 25%;
+}
+
+#contect-us .con-img img{
+    width: 100%;
+}
+
+/* electricians */
+
+#booking .booking-img img{
+    border: 1px; 
+    border-radius: 5px; 
+    height: 100px;
+    width: 100px;
+}
+
+#booking .booking-img .booking-button {
+    border: 1px solid silver; 
+    margin-left: 20px; 
+    color: blue; 
+    border-radius: 8px;
+    margin-top: 5px;
+}
+
+
+/*  mybooking */
+
+#mybooking .mybooking .mybooking-btn .button-ongoing{
+    border: 1px solid #007bff;
+    padding: 15px 30px;
+    background-color: white;
+}
+
+
+#mybooking .mybooking .mybooking-btn .button-history{
+    border: 1px solid #007bff;
+    padding: 15px 30px;
+    background-color: white;
+}
+
+.badge-ongoing {
+    color: #fff;
+    background-color: rgb(255, 204, 0) !important; 
+    padding: 5px;
+    border-radius: 4px;
+}
+
+.badge-success {
+    color: #fff;
+    padding: 5px;
+    border-radius: 4px;
+}
+
+#mybooking .mybooking .mybooking-btn .active {
+    background: #007bff;
+    color: white;
+}
+
+#viewbooking a{
+    text-decoration: none;
+    font-weight: 400;
+    color: rgb(73 70 70);
+    font-size: 18px;
+}
+
+#viewbooking a:hover{
+    color: rgb(73 70 70);
+    font-weight: 600;
+}
+
+.text-14px{
+    color: #717589;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+#mybooking  .booking-item .tm-people {
+    width: 70px;
+    height: 70px;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    -o-object-fit: cover;
+    object-fit: cover;
+    max-width: none
+}
+
+.account-settings .user-profile {
+    margin: 0 0 1rem 0;
+    padding-bottom: 1rem;
+    text-align: center;
+}
+.account-settings .user-profile .user-avatar {
+    margin: 0 0 1rem 0;
+}
+.account-settings .user-profile .user-avatar img {
+    width: 90px;
+    height: 90px;
+    -webkit-border-radius: 100px;
+    -moz-border-radius: 100px;
+    border-radius: 100px;
+}
+.account-settings .user-profile h5.user-name {
+    margin: 0 0 0.5rem 0;
+}
+.account-settings .user-profile h6.user-email {
+    margin: 0;
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: #9fa8b9;
+}
+.account-settings .about {
+    margin: 2rem 0 0 0;
+    text-align: center;
+}
+.account-settings .about h5 {
+    margin: 0 0 15px 0;
+    color: #007ae1;
+}
+.account-settings .about p {
+    font-size: 0.825rem;
+}
+.form-control {
+    border: 1px solid #cfd1d8;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    font-size: .825rem;
+    background: #ffffff;
+    color: #2e323c;
+}
+
+.card {
+    background: #ffffff;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    border: 0;
+    margin-bottom: 1rem;
+}
+
+
+@media only screen and (min-width: 768px){
+	.m-sm-25{
+		margin: 10px !important;
+		margin-bottom: 3px !important;
+	}
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    .f-login-btn{
+        margin-bottom: 10px;
+    }
+    .social-login{
+        flex-direction: column;
+    }
+    #mobile .mobile-wrapper .Login-btn, .Register-btn{
+        width: 150px !important;
+
+    }
+
+    .social-login .w-100{
+        width: 275px !important;
+    }
+
+    .social-login .g-login-btn{
+        margin-left: 0px !important;
+    }
+}
+
+

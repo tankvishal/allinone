@@ -1,0 +1,29 @@
+{% load static %}
+{% include './coustomernav.html' %}
+
+
+<section id="mybooking" class="mt-5">
+    <div class="container pt-5 pb-5">
+        <div class="mt-5 mybooking text-center"> 
+            <h4 class="pb-4">My Bookings</h4>
+            <div class="mybooking-btn">
+                <a href={% url 'bookingongoing' %}>
+                    <div class="btn button-ongoing text-center"> 
+                       <b>ONGOING</b>
+                    </div>
+                 </a>
+                 <a href={% url 'bookinghistory' %}>
+                    <div class="btn button-history color-white text-center">
+                       <b>HISTORY</b>
+                    </div>
+                 </a>
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+
+
+
+{% include './cfooter.html' %}

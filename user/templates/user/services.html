@@ -1,0 +1,87 @@
+{% load static %}
+{% include './navbar.html' %}
+
+<section id="home-serrvices">
+   <div class="container pt-5">
+      <div class="row">
+         <div class="col-md-12">
+            <div class="header text-center">
+               <h4>Home</h4>
+               <h3><b>Services </b></h3>
+            </div>
+         </div>
+      </div>
+      <div class="box-wrapper pt-5 pb-5">
+         <div class="row">
+            {% for service in Services %}
+            <div class="col-md-6 col-lg-3 col-sm-12 h-item" >
+               <a href={% url 'electricians' service.serviceid %}>
+                  <div class="box bg-white shadow-mediam p-3">
+                     <div class="icon text-center">
+                       
+                        {% comment %} <img src={% static "./images/ele.jpeg" %}  class="home-s" alt=""> {% endcomment %}
+                        <img src="/image/{{service.serviceimage}}" width="160"  height="160"/></td>
+                        
+                     </div>  
+                     <h5 class="text-center mt-3">{{service.servicename}}</h5>
+                     <p class="text-center mt-3 color-black"><b>Description</b><br>{{service.servicedescription}}</p>
+                  </div>
+               </a>
+              
+            </div>
+            {% endfor %}
+            {% comment %} <div class="col-md-6 col-lg-3 col-sm-12 h-item" >
+                  <div class="box bg-white shadow-mediam p-3">
+                     <div class="icon text-center">
+                        <img src={% static "./images/ele.jpeg" %}  class="home-s" alt="">
+                     </div>
+                     <h5 class="text-center mt-3">Eletronics</h5>
+                     <p class="text-center mt-3 color-black">Choose Our Team And All Type Electric & Electronics Services.
+                     </p>
+                  </div>
+               </a>
+               
+            </div>  {% endcomment %}
+            {% comment %} <div class="col-md-6 col-lg-3 col-sm-12 h-item">
+               <a href={% url 'carpanter' %}>
+                  <div class="box bg-white shadow-mediam p-3">
+                     <div class="icon text-center">
+                        <img src={% static "./images/carpanter.jpg" %}  alt="">
+                     </div>
+                     <h5 class="text-center mt-3">Carpanter</h5>
+                     <p class="text-center mt-3 color-black">Home & Office Furnitur Making And Repair.
+                     </p>
+                  </div>
+               </a>
+            </div> {% endcomment %}
+            {% comment %} <div class="col-md-6 col-lg-3 col-sm-12 h-item">
+               <a href={% url 'plumber' %}>
+                  <div class="box bg-white shadow-mediam p-3">
+                     <div class="icon text-center">
+                        <img src={% static "./images/plumber.jpg" %}  alt="">
+                     </div>
+                     <h5 class="text-center mt-3">Plumber</h5>
+                     <p class="text-center mt-3 color-black">Different Types of Plumbing Services.
+                     </p>
+                  </div>
+               </a> 
+            </div> {% endcomment %}
+            {% comment %} <div class="col-md-6 col-lg-3 col-sm-12 h-item">
+               <a href={% url 'homepainting' %}>
+                  <div class="box bg-white shadow-mediam p-3">
+                     <div class="icon text-center">
+                        <img src={% static "./images/homepainter.jpg" %}  alt="">
+                     </div>
+                     <h5 class="text-center mt-3">Home Painting</h5>
+                     <p class="text-center mt-3 color-black">We provide Complete Painting Solution.
+                     </p>
+                  </div>
+               </a>
+            </div> {% endcomment %}
+         </div>
+      </div>
+   </div>
+</section>
+
+
+ {% include './footer.html' %}

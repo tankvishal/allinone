@@ -1,0 +1,182 @@
+{% load static %}
+{% load mathfilters %}
+{% comment %} {% include './navbar.html' %} {% endcomment %}
+{% include './coustomernav.html' %}
+
+{% if user.is_authenticated %}
+<section id="bookele" class="mt-5 pt-5  background-white">
+    <div class="container pt-5 pb-5 bg-light">
+        <div class="row">
+            {% comment %} <div class="col-md-2"></div> {% endcomment %}
+            <div class="col-md-8">
+                <div class="book-title d-flex">
+                    {% comment %} <a href={% url 'electricians' %} style="color: black;"><i class="fa fa-arrow-left" aria-hidden="true"></i></a><h4 class="pl-4">Order Details</h4> {% endcomment %}
+                </div>
+                <div class="pt-3"> 
+                        <h5 class="border-bottom pb-2">
+                            Order Detail
+                        </h5>
+                        <div class="row pt-3 Order-item-name">
+                            <div class="col-md-8">
+                                Service Name 
+                            </div>
+                            <div class="col-md-4">
+                                <div class="float-right">
+                                    <b>{{Subservice.subservicename}}</b>
+                                </div>
+                               
+                            </div>
+                        </div>
+                        <div class="row pt-3"> 
+                            <div class="col-md-10">
+                                Price
+                            </div>
+                            <div class="col-md-2">
+                                <div class="float-right">
+                                    <i class="fa fa-inr pr-1 text-13px text-black" aria-hidden="true" ></i><b>{{Subservice.subserviceprice}}.00</b>
+                                </div>
+                               
+                            </div>
+                        </div>
+        
+                        <div class="payment pt-4 border-bottom">
+                            <h5>
+                                Payment
+                            </h5>
+                        </div>
+                        <div class="row pt-3">
+                            <div class="col-md-10">
+                                Item total
+                            </div>
+                            <div class="col-md-2">
+                                <div class="float-right">
+                                    <i class="fa fa-inr pr-1 text-13px text-black" aria-hidden="true" ></i><b>{{Subservice.subserviceprice}}.00</b>
+                                </div>
+                               
+                            </div>
+                        </div>
+                        <div class="row pt-3 pb-2">
+                            <div class="col-md-10 ">
+                                Convenience fee
+                            </div>
+                            <div class="col-md-2">
+                                <div class="float-right">
+                                    <i class="fa fa-inr pr-1 text-13px text-black" aria-hidden="true" ></i><b>{{Subservice.subserviceprice|mul:10|div:100}}0</b>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row pt-3">
+                            <div class="col-md-10">
+                                <b>Total</b>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="float-right">
+                                    <i class="fa fa-inr pr-1 text-13px text-black" aria-hidden="true" ></i><b>{{Subservice.subserviceprice|mul:10|div:100|addition:Subservice.subserviceprice}}0</b>
+                                </div>
+                                
+                            </div>
+                            
+                        </div>
+                        
+                        <div class="text-center"><script src="https://www.paypal.com/sdk/js?client-id=AQEPzIsQb-VIPd8icNwBJx3PIpVbA4SUYE4gFLLT41rJvsvPFgnQ8zQLkUuAmZtqhWXTY5gL9NVdHpoS&currency=USD"></script> 
+                            <div id="paypal" style="display: none;"></div> 
+                                                   
+    
+                           
+    <!-- Set up a container element for the button -->
+    
+
+    <script>
+      paypal.Buttons({
+        // Sets up the transaction when a payment button is clicked
+        createOrder: (data, actions) => {
+          return actions.order.create({
+            purchase_units: [{
+              amount: {
+                value: "{{Subservice.subserviceprice|mul:10|div:100|addition:Subservice.subserviceprice}}" // Can also reference a variable or function
+              }
+            }]
+          });
+        },
+        // Finalize the transaction after payer approval
+        onApprove: (data, actions) => {
+          return actions.order.capture().then(function(orderData) {
+            // Successful capture! For dev/demo purposes:
+            console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
+            const transaction = orderData.purchase_units[0].payments.captures[0];
+            //alert(`Transaction ${transaction.status}: ${transaction.id}\n\nSee console for all available details`);
+            // When ready to go live, remove the alert and show a success message within this page. For example:
+            const element = document.getElementById('paypal');
+            if(transaction.status == "COMPLETED"){
+                element.innerHTML = '<h3>Thank you for your payment!</h3>';
+                document.getElementById("mysubmit").style.display='block';
+            }else{
+                element.innerHTML = '<h3>Not Successful!</h3>';
+            }
+          });
+        }
+      }).render('#paypal');
+
+      function change()
+{
+    var a = document.getElementById('housno').value;
+    var b = document.getElementById('landmark').value;
+    var c = document.getElementById('area').value;
+    var d = document.getElementById('pincode').value;
+    if(a != "" && b != "" && c != "" && d != ""){
+    document.getElementById("mybtn").style.display='none';
+    document.getElementById("paypal").style.display='block';
+    return true
+    }else{
+        alert("Please Fill All Details");
+        return false
+    }
+}
+
+
+    </script>   
+                    </div>
+                </div>
+            </div>
+            {% comment %} <div class="col-md-2"><div> {% endcomment %}
+            <div class="col-md-4 address" >
+                <h5 class="border-bottom pb-2">
+                    Address
+                </h5>
+                <form method="POST" id="myForm"  action="{% url 'insertorder'%}">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label><b>House/Flat No.</b></label>
+                        <input type="text"   name="houseno" class="form-control" id='housno' placeholder="House/Flat No." required>
+                        <input type="hidden" name='userid' value={{userid.userid}}>
+                        <input type="hidden" name="subserviceid" value="{{Subservice.subserviceid}}">
+                        <input type="hidden" name="serviceid" value="{{Subservice.serviceid}}">
+                        <input type="hidden" name="subservicename" value="{{Subservice.subservicename}}">
+                        <input type="hidden" name="serviceprice" value="{{Subservice.subserviceprice}}">
+                    
+                    </div>
+                    <div class="form-group">
+                       <label><b>Landmark</b></label>
+                       <input type="text"  name="landmark" class="form-control" id='landmark' placeholder="Landmark" required>
+                    </div>
+                    {{ incident|date:"F d Y P" }}
+                    <div class="form-group">
+                        <label><b>Area</b></label><br>
+                        <input type="text"  name="area" class="form-control" id="area" placeholder="Area" required>
+                    </div>
+                    <div class="form-group">
+                        <label><b>Pin Code</b></label>
+                        <input type="text"  name="pincode" class="form-control" id="pincode" placeholder="Pin Code" required>
+                    </div>
+                    <input type="button" id="mybtn" onclick="return change();" value="Make Payment" class="btn btn-primary pl-4 pr-4 pt-2 pb-2 shadow-sm"/>   
+                    <input type="submit" id="mysubmit" style="display: none;" value="View Order" class="btn btn-primary pl-4 pr-4 pt-2 pb-2 shadow-sm"/>   
+                </form>
+            </div>
+        </div>
+        
+    </div>
+
+</section>
+{% comment %} {% else %} {% endcomment %}
+{% include './cfooter.html' %}
+{% endif %}

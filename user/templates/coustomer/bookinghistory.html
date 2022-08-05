@@ -1,0 +1,70 @@
+{% load static %}
+{% include './coustomernav.html' %}
+
+
+<section id="mybooking" class="mt-5">
+    <div class="container pt-5 pb-5">
+        <div class="mt-5 mybooking text-center"> 
+            <h4 class="pb-4">My Bookings</h4>
+            <div class="mybooking-btn">
+                <a href={% url 'bookingongoing' %}>
+                    <div class="btn button-ongoing text-center"> 
+                       <b>ONGOING</b>
+                    </div>
+                 </a>
+                 <a href={% url 'bookinghistory' %}>
+                    <div class="btn active button-history color-white text-center">
+                       <b>HISTORY</b>
+                    </div>
+                 </a>
+            </div>
+            
+        </div>
+        {% for history in bookhistory%}
+        <div class="pt-5 row">
+            <div class="col-md-6">
+            </div>
+            <div class="col-md-6 border">
+                <div class="row border-bottom pt-3">
+                    <div class="col-md-7">
+                        <h5>{{history.servicename}}</h5>
+                        <h6 class="text-secondary pt-1">{{history.ordercompletetime}}</h6>
+    
+                    </div>
+                    <div class="col-md-5">
+                        <div class="">
+                            <span class="badge-success float-right"><b>Service Complated</b></span>
+                        </div>
+                        {% comment %} <span class="badge badge-green p-2"></span> {% endcomment %}
+    
+                    </div>
+                </div>
+                {% comment %} <div class="row p-4 text-secondary">
+                    <div class="booking-item  col-md-3">
+                        <img class="tm-people" src={% static "./images/test-man.JPG" %}  alt="">
+                    </div>
+                    <div class="col-md-9">
+                        <h5>Tank Vishal</h5>
+                        <i class="fa fa-star text-warning pr-1" aria-hidden="true"></i> 4.5 (899) Ratings
+                    </div>
+                </div> {% endcomment %}
+                <div class="text-center pt-3 pb-3">
+                    <a href={% url 'viewbooking' history.orderid %}>
+                    <button type="button" class="btn text-white" style="height: 50px; width: 50%;  background-color: #007bff;"><b>VIEW HISTORY</b></button>
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+        {% endfor%}
+    </div>
+
+    
+    
+
+</section>
+
+
+
+
+{% include './cfooter.html' %}

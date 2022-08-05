@@ -1,0 +1,60 @@
+{% load static %}
+{% include './navbar.html' %}
+
+    <!-- breadcrumbb -->
+
+    <div id="breadcrumb">
+        <div class="container">
+                <div class="row">
+                    <div class="col col--lg-5 ">
+                        <h1 class="title">Contact Us</h1>
+                        <div>  
+                          <ol class="breadcrumb display-flex-custom">
+                            <li class="breadcrumb-item"><a href={% url 'home' %}>Home</a></li>&nbsp; 
+                            <li class="breadcrumb-item active" aria-current="page">Contact Us</li>
+                          </ol>   
+                        </div>
+                    </div>
+                </div>
+        </div>
+        
+    </div>
+
+    <!-- contect-us -->
+    <section id="contect-us">
+        <div class="container">
+         <div class="row mt-5 mb-5">
+            <div class="p-5 con-img col-lg-6 col-md-12 col-sm-6 mx-auto mb-5">
+               <img src={% static "./images/contect-us.png" %}  class="" alt="">
+            </div>
+            <div class="contect-form p-5 col-lg-6 col-md-12 col-sm-6 mx-auto shadow-lg">
+              <form method="POST"  action="{%url 'contect'%}" enctype="multipart/form-data">
+               {% csrf_token %}
+               <div class="form-group contect-item  d-flex">
+                  <label ><b>Full Name:</b></label>
+                  <input type="text" class="form-control p-4" placeholder="Name"  name="fullname">
+               </div>
+               <div class="form-group contect-item mt-3 d-flex">
+                  <label ><b>Email:</b></label>
+                  <input type="text" class="form-control p-4" placeholder="Enter Email"  name="email">
+               </div>
+               <div class="form-group contect-item mt-3 d-flex">
+                  <label ><b>Phone:</b></label>
+                  <input type="text" class="form-control p-4" placeholder="Enter Phone Number"  name="phone">
+               </div>
+               <div class="form-group contect-item mt-3 d-flex">
+                  <label ><b>Massage:</b></label>
+                  <input type="text" class="form-control p-4" placeholder="Enter Your Message"  name="Message">
+               </div>
+               <div class="text-center mt-5">
+                  <button type="submit" class="btn btn-primary pl-4 pr-4 mb-2">Submit<i class="fa fa-angle-right text-white pl-3" aria-hidden="true"></i></button>
+               </div>
+
+              </form>
+            </div>
+         </div>
+        </div>
+    </section>
+    
+
+    {% include './footer.html' %}

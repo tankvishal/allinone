@@ -1,0 +1,95 @@
+{% load static %}
+{% include './navbar.html' %}
+
+<section id="electricians" class="pt-140-px">
+    <div class="container">
+        <div class="row mt-5 mb-5">
+            <div class="col-md-6 pt-5">
+                <h1 class="pt-4">Plumber</h1>
+                <i class="fa fa-star yellow pr-2" aria-hidden="true"></i> 4.5 (9k)
+            </div>
+            <div class="col-md-6">
+                <img src={% static "./images/plumberhome.jpg" %} class="h-300px p-2">
+            </div>
+        </div>
+    </div>
+</section>
+<section id="booking">
+    <div class="container">
+        <div class="row mt-4 mb-5">
+            <div class="col-md-6">
+                <div class="row border-bottom pb-3">
+                    <h2>Quick Booking</h2>
+                    <div class="col-md-9 border-bottom-d pb-3">
+                        
+                        <h5 class="mt-4">Book An Plumber</h5>
+                        <i class="fa fa-star yellow pr-2" aria-hidden="true"></i> 4.5 (2k)
+                        <div class="pt-2">
+                            <i class="fa fa-inr pr-1 text-13px text-black" aria-hidden="true" ></i><b class="pr-3">1499</b>   
+                            {% comment %} <i class="fa fa-circle pr-2 pl-3 text-5px mb-2" aria-hidden="true"></i>{% endcomment %}   &#9679;   10 mins 
+                        </div>
+                    </div>
+                    <div class="col-md-3 booking-img">
+                        <img src={% static "./images/plumberhome2.jpg" %}>
+                        <form method="get" action="{% url 'bookele' %}">
+                            <button type="submit" class="btn btn-white booking-button pl-3 pr-3 pt-1 pb-1 shadow-sm">Book</button>
+                        </form>
+                        {% comment %} <input name="add" type="submit" value="Book" class="btn btn-white booking-button pl-3 pr-3 pt-1 pb-1 shadow-sm"> {% endcomment %}
+                    </div>
+                    <div class="pl-4 mt-3">&#9679; Book an expert Plumber for on-site issue inspection</div>
+                    <div class="pl-4">&#9679; Actual price based on scope of work & spares will be charged as per rate card</div>
+                </div> 
+                
+                <div class="row border-bottom border-top pb-3 pt-4">
+                    <h2>Basin & sink</h2>
+                    
+                        <div class="col-md-9 border-bottom-d pb-3">
+                        
+                            <h5 class="mt-4">Waste pipe leakage</h5>
+                            <i class="fa fa-star yellow pr-2" aria-hidden="true"></i> 4.5 (4k)
+                            <div class="pt-2">
+                                <i class="fa fa-inr pr-1 text-13px text-black" aria-hidden="true" ></i><b class="pr-3">500</b>   
+                                {% comment %} <i class="fa fa-circle pr-2 pl-3 text-5px mb-2" aria-hidden="true"></i>{% endcomment %}   &#9679;   30 mins 
+                            </div>
+                        </div>
+                        <div class="col-md-3 booking-img">
+                            <img src={% static "./images/basin.jpeg" %}>
+                            <form method="get" action="{% url 'bookele' %}">
+                                <button type="submit" class="btn btn-white booking-button pl-3 pr-3 pt-1 pb-1 shadow-sm">Book</button>
+                            </form>
+                            {% comment %} <input name="add" type="submit" value="Book" class="btn btn-white booking-button pl-3 pr-3 pt-1 pb-1 shadow-sm"> {% endcomment %}
+                        </div>
+                        <div class="pl-3 pt-3">repair or replacement of one waste pipe</div>
+                   
+                        <div class="row border-top mt-3">
+                            <div class="col-md-9 border-bottom-d pb-3">
+                            
+                                <h5 class="mt-4">Wash Basin installation</h5>
+                                <i class="fa fa-star yellow pr-2" aria-hidden="true"></i> 4.55 (1.5k)
+                                <div class="pt-2">
+                                    <i class="fa fa-inr pr-1 text-13px text-black" aria-hidden="true" ></i><b class="pr-3">499</b>   
+                                    {% comment %} <i class="fa fa-circle pr-2 pl-3 text-5px mb-2" aria-hidden="true"></i>{% endcomment %}   &#9679;   30 mins 
+                                </div>
+                            </div>
+                            <div class="col-md-3 booking-img pt-3">
+                                <img src={% static "./images/basin2.jpg" %}>
+                                <form method="get" action="{% url 'bookele' %}">
+                                    <button type="submit" class="btn btn-white booking-button pl-3 pr-3 pt-1 pb-1 shadow-sm">Book</button>
+                                </form>
+                                {% comment %} <input name="add" type="submit" value="Book" class="btn btn-white booking-button pl-3 pr-3 pt-1 pb-1 shadow-sm"> {% endcomment %}
+                            </div>
+                            <div class="pl-3 pt-3">installation of all kind of wash-basin</div>
+                        </div>
+                    
+                </div>
+            </div>
+
+
+            <div class="col-md-6">
+                {% comment %} {% include './bookele.html' %} {% endcomment %}
+            </div>
+        </div>
+    </div>
+</section>
+
+{% include './footer.html' %}

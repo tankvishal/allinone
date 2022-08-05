@@ -1,0 +1,143 @@
+{% load static %}
+{% include './coustomernav.html' %}
+{% load mathfilters %}
+
+<section id="viewbooking" class="mt-5">
+    <div class="container pt-5 pb-5">
+        <div class="row pt-4">
+            <div class="col-md-8">
+                <h4>Electricity</h4>
+            </div>
+            {% comment %} <div class="col-md-2">
+                <a href="#" class="float-right"><i class="fa fa-clock-o pr-2" aria-hidden="true"></i>Reschedule</a>
+            </div>
+
+            
+            <div class="col-md-2 "> 
+                <a href="#" class="float-right"><i class="fa fa-times-circle-o pr-2" aria-hidden="true"></i>Cancle</a>
+            </div> {% endcomment %}
+        </div>
+        <div class="row pt-4">
+            <div class="col-md-8 p-3">
+                <div class="border shadow-sm p-4">
+                    <div class="pb-4 ">
+                        {% if orderdetail.orderstutas == True %}
+                        <h4 class="text-success">Booking accepted by agent</h4>
+                        <div class="text-secondary ">
+                            Booked for {{orderdetail.ordercompletetime}}
+                        </div>
+                    </div>
+                    <div class="row border-bottom p-4 text-secondary">
+                        <div class="booking-item  col-md-3">
+                            <img class="tm-people" style="width: 80px; height: 80px; -webkit-border-radius: 50%;
+                            border-radius: 50%;
+                            -o-object-fit: cover;
+                            object-fit: cover;
+                            max-width: none;" src="/image/{{agent.agentimage}}"  alt="">
+                        </div>
+                        <div class="col-md-9">
+                            <h5>{{agent.ag}}</h5>
+                            <i class="fa fa-star text-warning pr-1" aria-hidden="true"></i> 4.5 (899) Ratings
+                        </div>
+                    </div>
+                    <div class="pt-4">
+                        <b>An Electricity Will be assigned 60 minutes before booking time.</b>
+                    </div>
+                        {% else %}
+                        <h4 class="text-warning">Booking Pending</h4>
+                        
+                        <div class="text-secondary ">
+                            Booked for {{orderdetail.ordercompletetime}}
+                        </div>
+                    </div>
+                    <div class="pt-4">
+                        <b>An Electricity Will be assigned 60 minutes before booking time.</b>
+                    </div>
+                    {% endif%}
+                </div>
+            </div>
+            <div class="col-md-4 p-3">
+                <div class="border shadow-sm p-4">
+                    <h6>Payment Details</h6>
+                    <div class="row pt-3">
+                        <div class="col-md-9">
+                            {{orderdetail.servicename}}
+                        </div>
+                        <div class="col-md-3">
+                            <div class="float-right">
+                                ₹{{orderdetail.orderprice}}.00
+                                 
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row  pb-2">
+                        <div class="col-md-9">
+                            Convenience fee
+                        </div>
+                        <div class="col-md-3">
+                            <div class="float-right">
+                                ₹{{orderdetail.orderprice|mul:10|div:100}}0
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row pb-2 border-bottom">
+                        <div class="col-md-9 text-14px">
+                            <span>This fee goes towards training of partners and providing support, safety and assistance during the service</span>
+                        </div>
+                        <div class="col-md-3">
+                        </div>
+                    </div>
+                    <div class="row pt-3">
+                        <div class="col-md-9">
+                            <b>Amount to Pay</b>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="float-right">
+                                <h5>₹{{orderdetail.orderprice|mul:10|div:100|addition:orderdetail.orderprice}}0</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-8">
+            </div>
+            <div class="col-md-4 p-3">
+                <div class="border shadow-sm p-4">
+                        <h6><b>Booking Details</b></h6>
+                    <div class="row pt-3">
+                        <div class="col-md-2 pr-0">
+                            <i class="fa fa-map-marker" aria-hidden="true"></i>
+                        </div>
+                        <div class="col-md-10 pl-0">
+                            <h6>Services Location</h6>
+                            <div class="text-14px">
+                                <span>{{orderdetail.orderaddress}}</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row pt-3">
+                        <div class="col-md-2 pr-0">
+                            <i class="fa fa-clock-o" aria-hidden="true"></i>
+                        </div>
+                        <div class="col-md-10 pl-0">
+                            <h6>Timings</h6>
+                            <div class="text-14px">
+                                <span>{{orderdetail.orderdatetime}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>  
+    </div>
+</section>
+
+
+
+
+
+{% include './cfooter.html' %}
