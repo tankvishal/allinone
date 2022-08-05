@@ -1,0 +1,250 @@
+{% load static %}
+<!DOCTYPE html>
+<!-- Designined by CodingLab | www.youtube.com/codinglabyt -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <title> Admin All in One Services </title>
+    {% comment %} <link rel="stylesheet" href="{% static "css/style.css" %}"> {% endcomment %}
+    <link rel="stylesheet" href="{% static "./style.css" %}">
+   <!-- Boxicons CDN Link -->
+   <link href="{% static "https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" %}" rel='stylesheet'>
+    <link rel="stylesheet" href="{% static "path/to/font-awesome/css/font-awesome.min.css"  %}">
+
+    <link href="{% static "https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"  %}" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="{% static "https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" %}" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static "./css/bootstrap.min.css" %}">
+    <link href="{% static "https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" %}" rel="stylesheet"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://kit.fontawesome.com/8295a72f58.js" crossorigin="anonymous"></script>
+    <script src="fontawesome_free/js/all.min.js"></script>
+    <!-- font -->
+    <link rel="preconnect" href="{% static "https://fonts.googleapis.com"%}">
+    <link rel="preconnect" href="{% static "https://fonts.gstatic.com" %}" crossorigin>
+    <link rel="preconnect" href="{% static "https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,300&display=swap" %}" rel="stylesheet">
+    <link rel="preconnect" href="{% static "https://fonts.googleapis.com"%}">
+    <link rel="preconnect" href="{% static "https://fonts.gstatic.com"%}" crossorigin>
+    <link rel="preconnect" href="{% static "https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,300;1,700;1,900&display=swap"%}" rel="stylesheet">
+    <link rel="preconnect" href="{% static "https://fonts.googleapis.com"%}">
+    <link rel="preconnect" href="{% static "https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,300;1,700;1,900&family=Secular+One&display=swap"%}" rel="stylesheet">
+  </head>
+<body>
+  <div class="sidebar">
+    <div class="logo-details pl-5">
+      <span class="logo_name">All in Services</span>
+    </div>
+      <ul class="nav-links">
+        <li>
+          <a href={% url 'adminpan' %} >
+            <i class="fa fa-bars" aria-hidden="true"></i>
+            <span class="links_name">Dashboard</span>
+          </a>
+        </li>
+        <li>
+          <a href={% url 'services' %}>
+            <i class="fa fa-archive" aria-hidden="true"></i>
+            <span class="links_name">services</span>
+          </a>
+        </li>
+        <li>
+          <a href={% url 'subservices' %}>
+            <i class="fa fa-tasks" aria-hidden="true"></i>
+            <span class="links_name">Sub Service</span>
+          </a>
+        </li>
+        <li>
+          <a href={% url 'users' %}>
+            <i class="fa fa-user-o" aria-hidden="true"></i>
+            <span class="links_name">Users</span>
+          </a>
+        </li>
+        <li>
+          <a href={% url 'agent' %}>
+            <i class="fa fa-users" aria-hidden="true"></i>
+            <span class="links_name">Agent</span>
+          </a>
+        </li>
+        
+        {% comment %} <li>
+          <a href={% url 'Subcategory' %}>
+            <i class="fa fa-sliders" aria-hidden="true"></i>
+            <span class="links_name">Sub Category</span>
+          </a>
+        </li> {% endcomment %}
+        <li>
+          <a href={% url 'order' %}>
+            <i class="fa fa-list-ul" aria-hidden="true"></i>
+            <span class="links_name">Order list</span>
+          </a>
+        </li>
+        <li>
+          <a href={% url 'payment' %}>
+            <i class="fa fa-credit-card-alt" aria-hidden="true"></i>
+            <span class="links_name">Payment</span>
+          </a>
+        </li>
+        <li>
+          <a href={% url 'contectus' %} >
+            <i class="fa fa-envelope-o" aria-hidden="true"></i>
+            <span class="links_name">Contect Us</span>
+          </a>
+        </li>
+        <li>
+          <a href={% url 'agentkyc' %} >
+            <i class="fa fa-id-card" aria-hidden="true"></i>
+            <span class="links_name">Agent KYC</span>
+          </a>
+        </li>
+        <li>
+          <a href={% url 'feedback' %} class="active">
+            <i class="fa fa-comments" aria-hidden="true"></i>
+            <span class="links_name">Feedback</span>
+          </a>
+        </li>
+        {% comment %} <li>
+          <a href={% url 'setting' %}>
+            <i class="fa fa-cog" aria-hidden="true"></i>
+            <span class="links_name">Setting</span>
+          </a>
+        </li> {% endcomment %}
+        <li class="log_out">
+          {% if not request.user.is_authenticated %}
+            <a class="links_name text-white"  href={% url 'login' %}><i class="fa fa-user pt-5px pr-2" aria-hidden="true"></i>Login/Register</a>
+          {% endif %}
+          {% if request.user.is_authenticated %}
+          <a href="{% url 'logout' %}" >
+            <i class="fa fa-sign-out" aria-hidden="true"></i>
+            
+            <span class="links_name">Log out</span>
+          </a>
+          {% endif %}
+        </li>
+      </ul>
+    </div>
+  
+  <section class="home-section">
+    <nav>
+      <div class="sidebar-button">
+        <!-- <i class='bx bx-menu sidebarBtn'></i> -->
+        <span class="dashboard">Dashboard</span>
+      </div>
+      {% comment %} <div class="search-box">
+        <input type="text" placeholder="Search">
+        <i class='fa fa-search bx bx-search '></i>
+      </div> {% endcomment %}
+      <div class="profile-details">
+        <img src={% static "./images/All_in_one2.png" %} alt="">
+        <span class="admin_name">{{user.username}}</span>
+        <i class='bx bx-chevron-down' ></i>
+      </div>
+    </nav>
+
+    <section>
+      <section id="users" class="p-4" >
+          <div class="users mt-5">
+            <div class=" user-title">
+              <i class="fa fa-comments" aria-hidden="true"></i>
+                Feedback Details
+            </div>
+            
+          </div>
+        
+          <div class="user-list mt-3">
+            <div class="row m-2">
+              <div class="col-md-1 border p-2">
+                <b>Sr No</b>
+              </div>
+              <div class="col-md-2 border p-2">
+                <b>Feedback id</b>
+              </div>
+              <div class="col-md-1 border p-2">
+                <b>User id</b>
+              </div>
+              <div class="col-md-1 border p-2">
+                <b>Agent id</b>
+              </div>
+             
+              <div class="col-md-4 border p-2 ">
+                <b>Feedback Msg</b>
+              </div>
+              <div class="col-md-2 border p-2 ">
+                <b>Feedback Date</b>
+              </div>
+              <div class="col-md-1 border p-2 ">
+                <b>Action</b>
+              </div>
+            </div>   
+  
+            <div class="row ml-2 mb-2 mr-2">
+              {% for feedback  in Feedbacks %} 
+              <div class="col-md-1 border p-3 text-center">
+               <b> {{forloop.counter}}</b>
+              </div>
+
+              <div class="col-md-2 border p-3 text-center">
+                {{feedback.feedbackid}}
+              </div>
+
+              <div class="col-md-1 border p-3 text-center">
+                {{feedback.userid}}
+              </div>
+
+              <div class="col-md-1 border p-3 text-center">
+                {{feedback.agentid}}
+              </div>
+
+              <div class="col-md-4 border p-3 text-center">
+                {{feedback.feedbackmessage}}
+              </div>
+
+              <div class="col-md-2 border p-3 text-center">
+                {{feedback.feedbackdate}}
+              </div>
+                  
+                  
+                  
+                  {% comment %} <div class="col-md-2 border p-2 text-center">
+                     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                      <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                    </button> 
+                    <button type="button" class="btn btn-danger"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+                  </div> {% endcomment %}
+                  <div class="col-md-1 border p-3 text-center">
+                  <a href={% url 'deletedatafeedback' feedback.feedbackid %} method="post" class="d-inline">
+                    <input type="submit" class="btn btn-danger" value="delete">
+                  </a> 
+                </div>
+                  
+                  {% endfor %} 
+                  <!-- Modal -->
+                  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="exampleModalLabel">Category Edit</h5>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"><i class="fa fa-times" aria-hidden="true" style="font-size: 20px;"></i></button>
+                        </div>
+                        <div class="modal-body">
+                          ...
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                          <button type="button" class="btn btn-primary">Save changes</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              
+          </div>
+    
+      </section>
+    </section>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+
+</body>
+</html>
